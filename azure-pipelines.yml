@@ -80,7 +80,7 @@ stages:
             displayName: 'Azure App Service Deploy: website'
             inputs:
               azureSubscription: 'Resource Manager - Tailspin - Space Game'
-              appName: '$(WebAppName)'
+              appName: '$(WebAppNameDev)'
               appType: webAppLinux
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/Tailspin.SpaceGame.Web.zip'
 
@@ -97,7 +97,7 @@ stages:
             displayName: 'Update web app settings'
             inputs:
               azureSubscription: 'Resource Manager - Tailspin - Space Game'
-              appName: $(WebAppName)
+              appName: $(WebAppNameDev)
               resourceGroupName: $(ResourceGroupName)
               appSettings: |
                 [
